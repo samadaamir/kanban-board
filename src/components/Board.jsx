@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 import { initialData } from '../data/initialData'
+import Column from './Column'
 const Board = () => {
 
   const [boardData, setBoardData] = useState(initialData)
   return (
-    <div className='w-full flex '>
-    {
-     boardData.columns.map((column)=>(
-      <div key = {column.id} className='w-80 rounded-lg bg-gray-100 p-4 shadow'> 
-      <h2 className='mb-4 text-xl font-bold'>{column.title}</h2>
-      </div>
-     )
+    <div className="flex gap-6 p-6">
 
-     )
-    }
+      {boardData.columns.map((column) => (
+        <Column key={column.id} column={column} />
+      ))
 
+      }
     </div>
   )
 }
