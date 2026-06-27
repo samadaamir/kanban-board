@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (card) => {
   return (
-    <div>Card</div>
+    <div className='bg-white flex'>
+      <h2 className='font-bold'>{card.title}</h2>
+      <button className='p-2 border-2 border-black'>X</button>
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 const Column = ({ column }) => {
   return (
@@ -8,7 +9,11 @@ const Column = ({ column }) => {
         <span className='rounded-full bg-gray-200 px-3 py-1 text-sm font-medium'>{column.cards.length}</span>
       </div>
       <div className='min-h-50 space-y-3'>
-
+        {
+          column.cards.map((card) => (
+            <Card key={card.id} card={card} />
+          ))
+        }
       </div>
       <button className='mt-4 w-full rounded-lg border border-dashed border-gray-300 py-2 text-sm font-medium transition hover:bg-gray-100'>Add Card</button>
     </div>
